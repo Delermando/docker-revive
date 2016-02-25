@@ -1,7 +1,7 @@
 revive:
   extends:
-    file: ./docker/nginx.yml
-    service: nginx
+    file: ./docker/revive.yml
+    service: revive
   links:
     - mysql
 mysql:

@@ -1,6 +1,6 @@
-nginx:
-  image: revive
-  container_name: nginx
+revive:
+  image: delermando/docker-revive
+  container_name: revive
   ports:
     - "8080:80"
   volumes:
