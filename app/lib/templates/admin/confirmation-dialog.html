@@ -1,0 +1,37 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}
+
+<script type="text/javascript">
+{literal}<!--
+  $(document).ready(function() {
+{/literal}
+    $(".{$linkToConfirmClass}").confirmedLink("{$linkToConfirmClass}", "{$id}");
+{literal}
+  });
+//-->{/literal}
+</script>
+
+<div id="{$id|default:''}confirmation-dialog" class="jqmWindow">
+  <div class="jqm-window-title">&nbsp;&nbsp;{$title}</div>
+
+  <div class="jqm-window-body">
+
+    <div>
+      {$message}
+    </div>
+
+    <div class="jqm-controls">
+      <input id="{$id|default:''}cd-submit" type="button" value="{$confirmLabel}" class="main-submit" {tabindex} />&nbsp;
+      <input id="{$id|default:''}cd-cancel" type="button" value="{$cancelLabel|default:'Cancel'}"  {tabindex} />
+    </div>
+  </div>
+</div>

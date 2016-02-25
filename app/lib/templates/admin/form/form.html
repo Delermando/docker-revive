@@ -1,0 +1,55 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->
+*}
+
+<div class="messagePlaceholder messagePlaceholderForm" id="errors_{$form.id}" {if $form.errors}{else}style="display:none"{/if}>
+  <div class="message localMessage">
+    <div class="panel error">
+      <div class="icon"></div><p>{t str=FormContainsErrors}</p>
+      <div class="topleft"></div>
+      <div class="topright"></div>
+      <div class="bottomleft"></div>
+      <div class="bottomright"></div>
+    </div>
+  </div>
+</div>
+
+<form {$form.attributes}>
+{$form.hidden}
+
+{foreach from=$form.elements item=nonSecElem key=ei name=_e_elements}
+    {oa_form_element elem=$nonSecElem }{/oa_form_element}
+{/foreach}
+
+{foreach from=$form.sections item=sec key=i name=_e_outer}
+    {if !$smarty.foreach._e_outer.first}
+    {/if}
+    {oa_form_element elem=$sec}
+        {foreach from=$sec.elements item=element}
+            {oa_form_element elem=$element }{/oa_form_element}
+        {/foreach}
+    {/oa_form_element}
+{/foreach}
+</form>
+
+<script type="text/javascript">
+<!--
+{$form.JQueryMethods}
+
+$(document).ready(function() {ldelim}
+    $("#{$form.id}").initForm({ldelim}
+        {$form.JQueryRules}
+    {rdelim});
+{rdelim});
+//-->
+</script>
+

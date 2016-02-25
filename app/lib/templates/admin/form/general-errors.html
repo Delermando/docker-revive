@@ -1,0 +1,24 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->
+*}
+
+{if $errors}
+    <div class='errormessage'><img class='errormessage' src='{$assetPath}/images/errormessage.gif' align='absmiddle'>
+        <span class='tab-r'>{t str=$title}</span><br>
+        {t str=$text}
+        <ul>
+        {foreach from=$errors item=aError}
+            <li>{$aError->message}</li>
+        {/foreach}
+        </ul>
+    </div>
+{/if}

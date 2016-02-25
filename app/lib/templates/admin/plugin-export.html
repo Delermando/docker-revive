@@ -1,0 +1,67 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}
+
+
+<div style="min-width: 750px">
+
+    <table class="data" >
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>File</td>
+                <td>Errors</td>
+            </tr>
+        </thead>
+
+        <tbody>
+          {if !$aPlugins|@count}
+            <tr class="even">
+                <td colspan="3">
+                 <p>No plugins exported.</p>
+                </td>
+            </tr>
+          {else}
+	        {foreach from=$aPlugins key=name item=aitem}
+	            <tr class="{$bgClass}">
+	                <td width="20%">
+	                   {$name}
+	                </td>
+	                <td>
+	                   {$aitem.file}
+	                </td>
+	                <td>
+	                   {if !$aitem.error}
+	                   No&nbsp;
+	                   {/if}
+	                   Errors
+	               </td>
+	            </tr>
+            {/foreach}
+           {/if}
+        </tbody>
+    </table>
+</div>
+
+{if $aErrors}
+    <div class="error-box" style="margin-bottom: 10px">
+        {foreach from=$aErrors key=i item=aError}
+            {foreach from=$aError key=idx item=error}
+                {$error}
+                <br />
+            {/foreach}
+        {/foreach}
+    </div>
+{/if}
+
+
+
+

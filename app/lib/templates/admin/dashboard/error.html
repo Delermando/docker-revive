@@ -1,0 +1,54 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}<html>
+<head>
+  <link rel='stylesheet' type='text/css' href='{$assetPath}/css/dashboard-widget.css'>
+</head>
+<body>
+<div id="wrapper">
+   <div id="main">
+      <div id="dashboardPreview"></div>
+   </div>
+
+<!-- wrapper end -->
+</div>
+
+<div class="widgetOverlay">
+    <div class="widgetOverlayHeader">&nbsp;</div>
+    <div class="widgetOverlayCenter">
+        <div class="widgetOverlayRight">&nbsp;</div>
+        <div class="widgetOverlayBody">
+            <div class="widgetOverlayContent" style="text-align: center">
+                <h1 style="margin-top: 30px">Dashboard Error</h1>
+                <p style="color: red">
+                    {$errorMessage|escape} ({t str=DashboardErrorCode}: {$errorCode})
+                </p>
+                {if $systemMessage}
+                    <p>
+                    {t str=DashboardSystemMessage}: {$systemMessage|escape}
+                    </p>
+                {/if}
+                {if $errorDescription}
+	                <p style="text-align: justify">
+	                {$errorDescription}
+	                </p>
+	            {/if}
+                <p style="text-align: justify">
+                {t str=DashboardErrorHelp}
+                </p>
+            </div>
+        </div>
+        <div class="widgetOverlayLeft">&nbsp;</div>
+    </div>
+    <div class="widgetOverlayFooter">&nbsp;</div>
+</div>
+</body>
+</html>

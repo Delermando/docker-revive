@@ -1,0 +1,18 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->
+*}
+
+<div>
+    <div {if $elem.vars.radioId}id="info-{$elem.vars.radioId}"{/if} class="type-desc">
+        {if $elem.vars.radioId}<label for="{$elem.vars.radioId}">{/if}{t str=$elem.vars.infoKey}{if $elem.vars.radioId}</label>{/if}
+    </div>
+</div>

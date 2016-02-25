@@ -1,0 +1,43 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}
+
+<script type="text/javascript">
+<!--
+    var validatorPreferences = {literal}{{/literal}
+        'strFieldContainsErrors': "{$strFieldContainsErrors|escape:'javascript'}",
+        'strFieldFixBeforeContinue1': "{$strFieldFixBeforeContinue1|escape:'javascript'}",
+        'strFieldFixBeforeContinue2': "{$strFieldFixBeforeContinue2|escape:'javascript'}",
+        'strWarningMissing': "{$strWarningMissing|escape:'javascript'}",
+        'strWarningMissingOpening': "{$strWarningMissingOpening|escape:'javascript'}",
+        'strWarningMissingClosing': "{$strWarningMissingClosing|escape:'javascript'}",
+        'strSubmitAnyway': "{$strSubmitAnyway|escape:'javascript'}",
+        'thousandsSeperator': "{$thousandsSeperator}"
+    };
+
+	var tablePreferences = {literal}{{/literal}
+		'warningBeforeDelete': {$warningBeforeDelete}
+    };
+//-->
+</script>
+{if $combineAssets}
+<script type="text/javascript" src="{$assetPath}/min.php?g={$jsGroup}&amp;v={$oxpVersion}"></script>
+{else}
+  {foreach from=$aJsFiles item=javascript}
+<script type="text/javascript" src="{$assetPath}/{$javascript}?v={$oxpVersion}"></script>
+  {/foreach}
+{/if}
+
+{foreach from=$aOtherJSFiles item=javascript}
+<script type="text/javascript" src="{$javascript}"></script>
+{/foreach}
+
+

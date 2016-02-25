@@ -1,0 +1,63 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}{if $uiPart == 'header'}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html{if $phpAds_TextDirection != 'ltr'} dir="{$phpAds_TextDirection}"{/if}>
+<head>
+<title>{$pageTitle}</title>
+
+<meta name="generator" content="{$metaGenerator}" />
+<meta name="robots" content="noindex, nofollow" />
+
+<link rel="stylesheet" type="text/css" href="{$assetPath}/css/chrome.css" />
+{if $phpAds_TextDirection != 'ltr'}<link rel="stylesheet" type="text/css" href="{$assetPath}/css/chrome-rtl.css" />{/if}
+<link rel="stylesheet" type="text/css" href="{$assetPath}/css/interface-{$phpAds_TextDirection}.css" />
+
+<script type='text/javascript'>
+<!--{literal}
+    function GoOpener(url, reload)
+    {
+        opener.location.href = url;
+        opener.focus();
+
+        if (reload == true)
+        {
+            document.search.submit();
+        }
+    }
+//{/literal}-->
+</script>
+
+</head>
+<body>
+
+<div id="oaHeader">
+
+{include file=layout/branding.html}
+
+	<div id='oaSearch'>
+		<form name='search' action='admin-search.php' method='post'>
+	    <input type='hidden' name='client' value='{$client}'>
+	    <input type='hidden' name='campaign' value='{$campaign}'>
+	    <input type='hidden' name='banner' value='{$banner}'>
+	    <input type='hidden' name='zone' value='{$zone}'>
+	    <input type='hidden' name='affiliate' value='{$affiliate}'>
+	    <input type='hidden' name='compact' value='{$compact}'>
+	    <input value="{$keyword|escape}" type='text' name='keyword' class='search' accesskey='{t key=Search}'><input class="submit" type="submit" value="&nbsp" >
+    </form>
+	</div>
+</div>
+
+{else}
+
+</body>
+</html>
+{/if}

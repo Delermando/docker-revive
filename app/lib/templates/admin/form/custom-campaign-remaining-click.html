@@ -1,0 +1,24 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->
+*}
+
+<span id="remainingClicksSection">
+     <span id='clicks_remaining_span' class="hide">{t str=ClicksRemaining}:<span id='clicks_remaining_count'>{$_e.vars.clicksRemaining}</span></span><br/>
+{if $adDirectEnabled}
+     <span id="openadsRemainingClicks">{t str=OpenxClicksRemaining}: <span id='openadsRemainingClicksCount'>600 *REAL DATA GOES HERE*</span>
+       <span class="link hide" help="help-openads-remaining-clicks" id="openadsRemainingClicksHelpLink"><img style="border: none; position: relative; top:5px;" src="{$assetPath}/images/help-book.gif" /></span>
+     </span>
+    <div class="hide" id="help-openads-remaining-clicks" style="height: auto; width: 290px;">
+     {t str=OpenxClicksRemainingHelp}
+    </div>
+{/if}
+</span>

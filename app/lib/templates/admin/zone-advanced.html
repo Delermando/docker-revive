@@ -1,0 +1,52 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+  
+-->*}
+
+<br/><br/>
+{*zone advanced form*}
+{include file=form/form.html form=$form}
+{*/zone advanced form*}
+
+<script type="text/javascript">
+<!--
+{literal}
+ $(document).ready(function() {
+   $('#chaintype-s').click(function() {
+      $('#chain-zone-select').hide();
+   });
+   $('#chaintype-z').click(function() {
+      $('#chain-zone-select').show();
+   });
+   $('#append-delivery-popup').click(function() {
+      $('#append-interstitial').hide();
+      $('#append-popup').show();
+   });
+   $('#append-delivery-interstitial').click(function() {
+      $('#append-popup').hide();
+      $('#append-interstitial').show();
+   });
+
+    //initial state
+   if ($('#chaintype-z').attr('checked') == true) {
+     $('#chain-zone-select').show();
+   }
+   if ($('#append-delivery-popup').attr('checked') == true) {
+      $('#append-interstitial').hide();
+      $('#append-popup').show();
+   }
+   if ($('#append-delivery-interstitial').attr('checked') == true) {
+      $('#append-popup').hide();
+      $('#append-interstitial').show();
+   }
+ });
+{/literal}
+//-->
+</script>

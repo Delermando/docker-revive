@@ -1,0 +1,20 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}
+{if $applicationName && $logoFileUrl}
+    <div id="oaHeaderBranding" class="brandingCustom"><img src="{$logoFileUrl|escape}" alt="{$applicationName|escape}" /></div>
+{elseif $applicationName}
+    <div id="oaHeaderBranding" class="brandingName">{$applicationName|escape}</div>
+{elseif $logoFileUrl}
+    <div id="oaHeaderBranding" class="brandingCustom"><img src="{$logoFileUrl|escape}" alt="{$productName}" /></div>
+{else}
+    <div id="oaHeaderBranding" class="brandingAdServer">{$productName}</div>
+{/if}

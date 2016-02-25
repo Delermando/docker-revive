@@ -1,0 +1,66 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}
+
+{if !$hideSwitcher}
+    {include file=plugin-group-switcher.html}
+{/if}
+
+<table class="data plugins-table" >
+     <thead>
+        <tr>
+            <td>Group</td>
+            <td>Version</td>
+            <td>Author</td>
+            <td>Extends</td>
+            <td>Status</td>
+            <td colspan="3">Actions</td>
+        </tr>
+     </thead>
+
+    <tbody>
+      {if !$aPlugins|@count}
+        <tr class="even">
+            <td colspan="6">
+             <p>No component groups.</p>
+            </td>
+        </tr>
+      {else}
+        {cycle name=bgclass values="odd,even" assign=bgClass reset=1}
+        {foreach from=$aPlugins key=name item=aPlugin}
+        {cycle name=bgclass assign=bgClass}
+            <tr class="{$bgClass}">
+                <td>
+                    {if $aPlugin.displayname != ''}
+                        {$aPlugin.displayname|escape}
+                    {else}
+                        {$name|escape}
+                    {/if}
+                </td>
+                <td>{$aPlugin.version}</td>
+                <td>{if {$aPlugin.authoremail|escape}<a href="mailto:{$aPlugin.authoremail}">{/if}{$aPlugin.author|escape}{if {$aPlugin.authoremail}</a>{/if}</td>
+                <td>{$aPlugin.extends}</td>
+                <td>
+                    {if $aPlugin.installed}
+                        {if $aPlugin.enabled}Enabled
+                        {else}Disabled
+                        {/if}
+                    {else}Not installed
+                    {/if}
+                </td>
+                <td><a href='plugin-index.php?action=info&group={$aPlugin.name}&parent={$aPackage.name}' ><span class="action icon details">Details</span></a></td>
+                <td>{if $aPlugin.settings}<a href='plugin-index.php?action=settings&group={$aPlugin.name}&parent={$aPackage.name}' ><span class="action icon settings">Settings</span></a>{/if}</td>
+                <td>{if $aPlugin.preferences}<a href='plugin-index.php?action=preferences&group={$aPlugin.name}&parent={$aPackage.name}' ><span class="action icon preferences">Preferences</span></a>{/if}</td>
+            </tr>
+        {/foreach}
+       {/if}
+    </tbody>
+</table>

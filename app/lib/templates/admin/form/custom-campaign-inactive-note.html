@@ -1,0 +1,21 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->
+*}
+
+<div class='errormessage'><img class='errormessage' src='{$assetPath}/images/info.gif' align='absmiddle'>
+    {t str=ClientDeactivated}:
+    <ul>
+    {foreach from=$_e.vars.inactiveReason item=reason}
+        <li>- {$reason}</li>
+    {/foreach}
+    </ul>
+</div>

@@ -1,0 +1,19 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}
+{if $infomessage}
+  <!-- TODO: display confirmation if a new user was added or invitation has been sent or password reset e-mail has been sent -->
+  <div class='infomessage'>
+    {$infomessage}
+  </div>
+{/if}
+
+{include file=user-access.html users=$users linkUrl=$linkAffiliateUrl}

@@ -1,0 +1,30 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}
+
+{if !empty($aSectionNav)}
+    <div id='thirdLevelNavigation'>
+    <ul class='navigation'>
+    {section name=n loop=$aSectionNav}
+      {if $aSectionNav[n].selected}
+        <li class="active {if $smarty.section.n.first} first{/if}{if $smarty.section.n.last} last{/if}">
+      {else}
+        <li class="passive {if $smarty.section.n.first} first{else}{if $smarty.section.n.last} last{/if}{/if}{if $aSectionNav[$smarty.section.n.index_prev].selected} after-active{/if}">
+      {/if}
+          <div class="left"><div class="right">
+            <a href="{$adminBaseURL}{$aSectionNav[n].filename|escape}" accesskey="{t key=Home}">{$aSectionNav[n].title|escape}</a>
+          </div></div>
+        </li>
+    {/section}
+    </ul></div>
+{/if}
+
+

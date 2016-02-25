@@ -1,0 +1,48 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}
+<div style="min-width: 750px">
+
+    <div class='panel'>
+        <span class='corner top-left'></span>
+        <span class='corner top-right'></span>
+        <span class='corner bottom-left'></span>
+        <span class='corner bottom-right'></span>
+
+        <div style="overflow: hidden;">
+
+            <div class="split-left">
+                <div class="item-info">
+                    <p><span class="name">{$aPackage.name} uninstallation</span></p>
+                    <p>{$aPackage.description|escape}</p>
+                </div>
+            </div>
+
+	    </div>
+	</div>
+</div>
+
+{if $uninstallReadme}
+<div class="error-box" style="margin-bottom: 10px">
+    {$uninstallReadme|escape}
+</div>
+
+{/if}
+
+<div style="min-width: 750px">
+    <br />
+    <form name="packageform" id="packageform" method="post" action="plugin-index.php" enctype="multipart/form-data">
+        <input name="package" value="{$aPackage.name}" type="hidden">
+        <input name="token" value="{$token}" type="hidden">
+        <input value="< Back" name="back" tabindex="0" type="button" onclick="location.href='plugin-index.php'">
+        <input value="Uninstall" name="uninstallConfirmed" tabindex="1" type="submit">
+    </form>
+</div>

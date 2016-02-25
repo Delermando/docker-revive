@@ -1,0 +1,23 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}
+{if $combineAssets}
+    <link rel="stylesheet" type="text/css" href="{$assetPath}/min.php?g={$cssGroup}&amp;v={$oxpVersion}">
+{else}
+  {foreach from=$aCssFiles item=stylesheet}
+<link rel="stylesheet" type="text/css" href="{$assetPath}/{$stylesheet}?v={$oxpVersion}">
+  {/foreach}
+{/if}
+
+{foreach from=$aOtherCssFiles item=stylesheet}
+    <link rel="stylesheet" type="text/css" href="{$stylesheet}">
+{/foreach}
+

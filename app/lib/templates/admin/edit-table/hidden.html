@@ -1,0 +1,15 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->
+
+*}{foreach item=s from=$from}
+<input type="hidden" name="{$s.name}" value="{$s.value|escape}" />
+{/foreach}

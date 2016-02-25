@@ -1,0 +1,27 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}
+
+<div id="{$id|default:''}terms-dialog" class="jqmWindow">
+  <div id="{$id|default:''}terms-title" class="jqm-window-title">&nbsp;&nbsp;</div>
+
+  <div class="jqm-window-body">
+    <div>
+      <div id="{$id|default:''}terms-contents" class="terms-contents">
+      </div>
+    </div>
+
+    <div class="jqm-controls">
+      <input id="{$id|default:''}terms-submit" type="button" value="{$confirmLabel|default:'I agree'}" class="main-submit" {tabindex} />&nbsp;
+      <input id="{$id|default:''}terms-cancel" type="button" value="{$cancelLabel|default:'I do not agree'}"  {tabindex} />
+    </div>
+  </div>
+</div>

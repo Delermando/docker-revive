@@ -1,0 +1,38 @@
+{*<!--
+
++---------------------------------------------------------------------------+
+| Revive Adserver                                                           |
+| http://www.revive-adserver.com                                            |
+|                                                                           |
+| Copyright: See the COPYRIGHT.txt file.                                    |
+| License: GPLv2 or later, see the LICENSE.txt file.                        |
++---------------------------------------------------------------------------+
+
+-->*}
+
+<div>
+<ul id="accounts">
+  <li style="display: none">{$query|escape}</li>
+  {foreach from=$adminAccounts key=accountId item=accountName}
+    <li>
+      <a href="{$adminWebPath}account-switch.php?account_id={$accountId|escape}">{boldSearchPhrase text=$accountName search=$query}</a>
+    </li>
+  {/foreach}
+  
+  {foreach from=$otherAccounts key=groupName item=accounts}
+    <li class="opt">{$groupName|escape}</li>
+    {foreach from=$accounts key=accountId item=accountName}
+      <li class="inopt">
+        <a href="{$adminWebPath}account-switch.php?account_id={$accountId|escape}">{boldSearchPhrase text=$accountName search=$query}</a>
+      </li>      
+    {/foreach}
+    {if isset($remainingCounts[$groupName])}
+      <li class="inopt more" title="{t str=UseSearchBoxToFindMoreAccounts}">... {$remainingCounts[$groupName]|escape}</li>
+    {/if}
+  {/foreach}
+  
+  {if empty($otherAccounts) && empty($adminAccounts)}
+    <li class="opt">{$noAccountsMessage|escape}</li>
+  {/if}
+</ul>
+</div>
