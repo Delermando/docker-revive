@@ -3,13 +3,13 @@
 This is a simple project to up  the Revive AdServer quickly using docker.
 
 ## Folder structure
-- app/
+- app/  
 -- Contains the Revive 3.2.2 source code
-- docker/ 
+- docker/  
 -- Contains the same files based on docker-compose syntax to config how docker will execute the containers
-- mysql/
+- mysql/  
 -- Initially, it Is a empty folder that is mapped to the mysql container, when the mysql container is running it will write the files within this folder, so you do not lose the data when the container is removed
-- server/
+- server/  
 -- Contains a configuration file for nginx, this file is mapped to docker container to be read to nginx 
 docker-compose up -d 
 
@@ -34,8 +34,9 @@ docker-compose up -d
 * 5 - Accept the terms and now it should display the database connection setup screen
 
 * 6 - Fill de fields with de database credentials
--- host -> (It is the IP that you get on step 3)
--- user -> root
--- pass -> root
+-- database name -> (You choose a name)  
+-- username -> root  
+-- password -> root  
+-- hostname -> (It is the IP that you get on step 3)  
 
 ###Now you can enjoy this tool!!
