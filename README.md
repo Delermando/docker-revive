@@ -19,21 +19,21 @@ docker-compose up -d
 - docker-compose (https://docs.docker.com/compose/install/)  
 
 ##Instalation
-* 1 - Clone this project  and access the project folder
-`git clone git@github.com:Delermando/docker-revive.git`
-`cd docker-revive`
+* 1 - Clone this project  and access the project folder  
+`git clone git@github.com:Delermando/docker-revive.git`  
+`cd docker-revive` 	
 
-* 2 - Run Docker stack 
+* 2 - Run Docker stack  
 `docker-compose up -d`
 
-* 3 - Get the MySql IP from container
+* 3 - Get the MySql IP from container  
 	`docker inspect --format '{{ .NetworkSettings.IPAddress }}' mysql`
 
 * 4 - Access 'locahost:8080' on browser now should appear a screen with the terms
 
 * 5 - Accept the terms and now it should display the database connection setup screen
 
-* 6 - Fill de fields with de database credentials
+* 6 - Fill de fields with de database credentials  
 -- database name -> (You choose a name)  
 -- username -> root  
 -- password -> root  
