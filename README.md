@@ -1,10 +1,13 @@
-#Docker-Revive  
+[![Docker Pulls](https://img.shields.io/docker/pulls/delermando/docker-revive.svg?maxAge=2592000)]() [![Docker Layers](https://images.microbadger.com/badges/image/delermando/docker-revive.svg)](http://microbadger.com/images/delermando/locust-load-test:1.0 "Get your own image badge on microbadger.com") [![Docker Version](https://images.microbadger.com/badges/version/delermando/docker-revive.svg)](http://microbadger.com/images/delermando/locust-load-test:1.0 "Get your own version badge on microbadger.com") 
 
+#Docker-Revive  
+###Introduction
 This is a simple project to up  the Revive AdServer quickly using docker.
 
 ## Folder structure
-- app/  
--- Contains the Revive 3.2.2 source code
+![Folder Structure]
+(http://s4.postimg.org/ams946cbx/folder_structure.png)
+- **app/** - Contains the Revive 3.2.2 source code
 - docker/  
 -- Contains the same files based on docker-compose syntax to config how docker will execute the containers
 - mysql/  
