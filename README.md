@@ -4,15 +4,13 @@
 ###Introduction
 This is a simple project to up  the Revive AdServer quickly using docker.
 
-## Folder structure
+## Folder Structure
 ![Folder Structure]
 (http://s4.postimg.org/ams946cbx/folder_structure.png)
 - **app/** - Contains the Revive 3.2.2 source code
 - **docker/** - Contains the same files based on docker-compose syntax to config how docker will execute the containers
 - **mysql/** - Initially, it Is a empty folder that is mapped to the mysql container, when the mysql container is running it will write the files within this folder, so you do not lose the data when the container is removed
-- **server/** - Contains a configuration file for nginx, this file is mapped to docker container to be read to nginx 
-docker-compose up -d 
-
+- **server/** - Contains a configuration file for nginx, this file is mapped to docker container to be read to nginx
 
 ## Requirements  
 - **docker** (https://docs.docker.com/engine/installation/linux/debian/)  
