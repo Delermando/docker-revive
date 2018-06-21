@@ -26,7 +26,7 @@ This is a simple project to up  the Revive AdServer quickly using docker.
 **3ª Step:** Get the MySql IP from container  
 `docker inspect --format '{{ .NetworkSettings.IPAddress }}' mysql`
 
-**4ª Step:** Access 'locahost:8080' on browser. Now should appear a screen with the **Revive** terms
+**4ª Step:** Access 'localhost:8080' on browser. Now should appear a screen with the **Revive** terms
 
 **5ª Step:** Accept the terms. Now should display the database connection setup
 
