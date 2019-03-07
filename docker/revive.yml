@@ -1,9 +1,8 @@
 revive:
-  image: delermando/docker-revive
+  build: .
   container_name: revive
   ports:
     - "8080:80"
   volumes:
-    - ./../app:/var/www/html
     - ./../server/nginx.conf:/etc/nginx/nginx.conf
     - ./entrypoint.sh:/usr/local/bin/entrypoint.sh
